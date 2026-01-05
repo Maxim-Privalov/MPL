@@ -207,7 +207,7 @@ print("Спасибо за игру!")
     p = Parser(token_list)
     root = p.parseBlock(GLOBAL)
     # print(root)
-    Parser.bypass(root, 0)
+    # Parser.bypass(root, 0)
 
 
 
@@ -215,4 +215,5 @@ print("Спасибо за игру!")
     print(t.translate())
 
 if __name__ == '__main__':
+
     main()
