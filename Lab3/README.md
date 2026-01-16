@@ -1,0 +1,1 @@
+# Выполнил работу в роли Producer. Consumer - Ким Денис : https://github.com/JKanin/SYP_Labs/tree/main/Lab_3
