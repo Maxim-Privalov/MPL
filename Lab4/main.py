@@ -5,10 +5,10 @@ import random
 import time
 import re
 
-MIN_DELAY = 45      # минимум секунд между запросами
-MAX_DELAY = 120     # максимум
+MIN_DELAY = 45
+MAX_DELAY = 120
 MAX_RETRIES = 4
-BACKOFF_FACTOR = 2  # экспоненциальная задержка
+BACKOFF_FACTOR = 2
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
@@ -102,7 +102,7 @@ class VesselFinderParser:
             return None
 
         rows = table.find_all("tr")
-        if len(rows) - 1 != 1:  # кроме заголовка должна быть ровно одна строка
+        if len(rows) - 1 != 1:
             print(f"{search_url}: найдено {len(rows)-1} судов -> пропускаем")
             return None
 
@@ -136,7 +136,6 @@ class VesselFinderParser:
         mmsi = data.get("MMSI", "N/A")
         vessel_type = data.get("AIS тип", "N/A")
 
-        # поиск IMO и MMSI
         if imo == "N/A" or mmsi == "N/A":
             for val in data.values():
                 if isinstance(val, str):
